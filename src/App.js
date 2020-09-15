@@ -1,39 +1,21 @@
 import React from "react";
-import Navbar from "./components/navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+// import { Provider } from "react-redux";
+import Routes from "./Routes";
+import Navbar from "./components/Navbar";
+// import storeFactory from "./store";
+
+// const store = storeFactory();
 
 export default function App() {
   return (
+    // <Provider store={store}>
     <Router>
       <div>
         <Navbar />
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <Routes />
       </div>
     </Router>
+    // </Provider>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
