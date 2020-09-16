@@ -1,17 +1,16 @@
 import { v4 as uuid } from "uuid";
+import * as dayjs from "dayjs";
 
-const formatNews = (news) => {
+export const formatNews = (news) => {
   return news.map((singleNews) => {
     return {
       id: uuid(),
       title: singleNews.title,
       url: singleNews.url,
       imgUrl: singleNews.img_url,
-      date: singleNews.date,
+      date: dayjs(singleNews.date).format("D/MM/YYYY"),
       source: singleNews.source_name,
       category: singleNews.category,
     };
   });
 };
-
-export default formatNews;

@@ -28,3 +28,7 @@ const news = (state = initialState, action) => {
 };
 
 export default news;
+
+export const getNews = (state) => state.news;
+export const getNewsPending = (state) => state.pending;
+export const getNewsError = (state) => state.error;

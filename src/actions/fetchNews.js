@@ -1,7 +1,7 @@
 import { formatNews } from "./formatNews";
 import { loadingError, loadingInProgress, loadingSuccess } from "./index";
 
-export const getNews = (endpoint) => {
+export const fetchNews = (endpoint) => {
   return (dispatch) => {
     dispatch(loadingError(false));
 
@@ -18,10 +18,11 @@ export const getNews = (endpoint) => {
         return response;
       })
       .then((response) => response.json())
+      .then((news) => news.slice(0, 15))
       .then((news) => formatNews(news))
       .then((news) => dispatch(loadingSuccess(news)))
       .catch(() => dispatch(loadingError(true)));
   };
 };
 
-export default fethNews;
+export default fetchNews;
