@@ -13,7 +13,7 @@ const NewsItem = (props) => {
             src={
               imgUrl
                 ? imgUrl
-                : "https://via.placeholder.com/500?text=Peek+Into+Argentina"
+                : "https://via.placeholder.com/800?text=News+Without+Image"
             }
             alt={title}
           />

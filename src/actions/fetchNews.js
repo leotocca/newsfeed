@@ -1,4 +1,4 @@
-import { formatNews } from "./formatNews";
+import { formatNews } from "../utilities/formatNews";
 import { loadingError, loadingInProgress, loadingSuccess } from "./index";
 
 export const fetchNews = (endpoint) => {

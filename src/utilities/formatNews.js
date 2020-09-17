@@ -8,7 +8,7 @@ export const formatNews = (news) => {
       title: singleNews.title,
       url: singleNews.url,
       imgUrl: singleNews.img_url,
-      date: dayjs(singleNews.date).format("D/MM/YYYY"),
+      date: dayjs(singleNews.date).format("D/M/YY"),
       source: singleNews.source_name,
       category: singleNews.category,
     };
