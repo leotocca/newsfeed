@@ -1,15 +1,25 @@
 import React from "react";
-import NewsItem from "./NewsItem";
 import { connect } from "react-redux";
-import { getNews, getNewsError, getNewsPending } from "../reducers/index";
 import { bindActionCreators } from "redux";
+import NewsItem from "./NewsItem";
 import { fetchNews } from "../actions/fetchNews";
+import {
+  getNews,
+  getNewsError,
+  getNewsPending,
+  getCategory,
+} from "../reducers/index";
 import formatEndpoint from "../utilities/formatEndpoint";
 
 class NewsList extends React.Component {
   componentWillMount() {
-    const { fetchNews } = this.props;
-    fetchNews(formatEndpoint("latest"));
+    const { fetchNews, category } = this.props;
+
+    if (category === undefined) {
+      fetchNews(formatEndpoint("latest"));
+    } else {
+      fetchNews(formatEndpoint("category", category));
+    }
   }
 
   render() {
@@ -48,12 +58,13 @@ const mapStateToProps = (state) => ({
   error: getNewsError(state),
   news: getNews(state),
   pending: getNewsPending(state),
+  category: getCategory(state),
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
-      fetchNews: fetchNews,
+      fetchNews,
     },
     dispatch
   );

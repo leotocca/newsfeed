@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const NewsItem = (props) => {
   const { title, imgUrl, url, date, source } = props.news;

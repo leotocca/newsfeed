@@ -13,7 +13,22 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="mx-5">
-          <Link to="/news">News</Link>
+          <Link to="/politics">Politics</Link>
+        </li>
+        <li className="mx-5">
+          <Link to="/international">International</Link>
+        </li>
+        <li className="mx-5">
+          <Link to="/technology">Technology</Link>
+        </li>
+        <li className="mx-5">
+          <Link to="/shows">Shows</Link>
+        </li>
+        <li className="mx-5">
+          <Link to="/sports">Sports</Link>
+        </li>
+        <li className="mx-5">
+          <Link to="/design">Design</Link>
         </li>
       </ul>
     </nav>

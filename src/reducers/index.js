@@ -1,3 +1,5 @@
+import { getCategoriesIdNumber } from "../utilities/getCategoriesIdNumber";
+
 const initialState = {
   news: [],
   category: undefined,
@@ -22,6 +24,11 @@ const news = (state = initialState, action) => {
         ...state,
         news: action.news,
       };
+    case "SET_CATEGORY":
+      return {
+        ...state,
+        category: getCategoriesIdNumber(action.category),
+      };
     default:
       return state;
   }
@@ -32,3 +39,4 @@ export default news;
 export const getNews = (state) => state.news;
 export const getNewsPending = (state) => state.pending;
 export const getNewsError = (state) => state.error;
+export const getCategory = (state) => state.category;
