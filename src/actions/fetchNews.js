@@ -18,7 +18,7 @@ export const fetchNews = (endpoint) => {
         return response;
       })
       .then((response) => response.json())
-      .then((news) => news.slice(0, 15))
+      .then((news) => news.slice(0, 10))
       .then((news) => formatNews(news))
       .then((news) => dispatch(loadingSuccess(news)))
       .catch(() => dispatch(loadingError(true)));
