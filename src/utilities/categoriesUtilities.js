@@ -6,3 +6,12 @@ export const getCategoriesIdNumber = (category) => {
   if (category === "Sports" || category === "sports") return 5;
   if (category === "Design" || category === "design") return 6;
 };
+
+export const getCategoriesName = (category) => {
+  if (category === 1) return "Politics";
+  if (category === 2) return "International";
+  if (category === 3) return "Technology";
+  if (category === 4) return "Shows";
+  if (category === 5) return "Sports";
+  if (category === 6) return "Design";
+};

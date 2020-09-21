@@ -1,4 +1,4 @@
-import { getCategoriesIdNumber } from "../utilities/getCategoriesIdNumber";
+import { getCategoriesIdNumber } from "../utilities/categoriesUtilities";
 
 const initialState = {
   news: [],

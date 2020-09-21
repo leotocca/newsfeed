@@ -29,7 +29,7 @@ class NewsList extends React.Component {
       return (
         <div className="w-full h-full flex justify-center items-center">
           <div className="bg-red-500 py-5 px-5 rounded-md shadow-md">
-            <p>Error when loading the news</p>
+            <p>Error loading the news</p>
           </div>
         </div>
       );
