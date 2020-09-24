@@ -12,7 +12,7 @@ import {
 import formatEndpoint from "../utilities/formatEndpoint";
 
 class NewsList extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     const { fetchNews, category } = this.props;
 
     if (category === undefined) {

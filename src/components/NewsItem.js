@@ -1,7 +1,7 @@
 import React from "react";
 
 const NewsItem = (props) => {
-  const { title, imgUrl, url, date, source } = props.news;
+  const { title, imgUrl, url, source } = props.news;
 
   const titleToShow =
     title.split(" ").length > 10
@@ -10,7 +10,7 @@ const NewsItem = (props) => {
 
   return (
     <div className="w-1/4 bg-gray-100 flex flex-col m-10 rounded-lg shadow-md">
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noopener noreferrer">
         <div className="h-56 w-full overflow-hidden">
           <img
             src={
