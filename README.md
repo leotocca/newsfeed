@@ -1,4 +1,4 @@
-# Room reservation app.
+# Newsfeed app.
 
 Second project of the [Advanced FrontEnd with React career in Acamica](https://www.acamica.com/front-end-avanzado-react).
 
