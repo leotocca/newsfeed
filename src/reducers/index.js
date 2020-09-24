@@ -3,8 +3,8 @@ import { getCategoriesIdNumber } from "../utilities/categoriesUtilities";
 const initialState = {
   news: [],
   category: undefined,
-  loadingError: false,
-  isLoading: false,
+  loadingError: undefined,
+  pending: undefined,
 };
 
 const news = (state = initialState, action) => {
@@ -12,7 +12,7 @@ const news = (state = initialState, action) => {
     case "LOADING_ERROR":
       return {
         ...state,
-        loadingError: true,
+        pending: true,
       };
     case "LOADING_IN_PROGRESS":
       return {

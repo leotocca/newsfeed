@@ -14,7 +14,7 @@ const Navbar = () => {
           </p>
         </div>
         <div className="mr-10">
-          <input type="text" className="w-full h-6" />
+          <input type="text" className="w-full h-6 mr-6" />
         </div>
       </div>
 

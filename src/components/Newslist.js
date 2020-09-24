@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import NewsItem from "./NewsItem";
-import { fetchNews } from "../actions/fetchNews";
+import { fetchNews } from "../utilities/fetchNews";
 import {
   getNews,
   getNewsError,
@@ -22,35 +22,39 @@ class NewsList extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    const { fetchNews, category } = this.props;
+
+    if (category === undefined) {
+      fetchNews(formatEndpoint("latest"));
+    } else {
+      fetchNews(formatEndpoint("category", category));
+    }
+  }
+
   render() {
     const { news, error, pending } = this.props;
 
-    if (error) {
-      return (
-        <div className="w-full h-full flex justify-center items-center">
-          <div className="bg-red-500 py-5 px-5 rounded-md shadow-md">
-            <p>Error loading the news</p>
-          </div>
-        </div>
-      );
-    } else if (pending) {
-      return (
-        <div className="w-full h-full flex justify-center items-center">
+    return (
+      <div className="w-full flex flex-wrap justify-center items-center">
+        {news &&
+          news.map((newsItem) => (
+            <NewsItem news={newsItem} key={newsItem.id} />
+          ))}
+
+        {pending && (
           <div className="text-green-600 text-2xl ">
             <p>Loading...</p>
           </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="w-full flex flex-wrap justify-center items-center">
-          {news &&
-            news.map((newsItem) => (
-              <NewsItem news={newsItem} key={newsItem.id} />
-            ))}
-        </div>
-      );
-    }
+        )}
+
+        {error && (
+          <div className="bg-red-500 py-5 px-5 rounded-md shadow-md">
+            <p>Error loading the news</p>
+          </div>
+        )}
+      </div>
+    );
   }
 }
 

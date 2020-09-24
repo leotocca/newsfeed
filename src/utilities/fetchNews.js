@@ -1,5 +1,9 @@
 import { formatNews } from "../utilities/formatNews";
-import { loadingError, loadingInProgress, loadingSuccess } from "./index";
+import {
+  loadingError,
+  loadingInProgress,
+  loadingSuccess,
+} from "../actions/index";
 
 export const fetchNews = (endpoint) => {
   return (dispatch) => {
@@ -12,15 +16,18 @@ export const fetchNews = (endpoint) => {
         if (!response.ok) {
           throw Error(response.statusText);
         }
-
-        dispatch(loadingInProgress(false));
-
         return response;
       })
       .then((response) => response.json())
       .then((news) => news.slice(0, 10))
-      .then((news) => formatNews(news))
-      .then((news) => dispatch(loadingSuccess(news)))
+      .then((news) => {
+        console.log("aca");
+        return news.map((news) => formatNews(news));
+      })
+      .then((news) => {
+        dispatch(loadingInProgress(false));
+        dispatch(loadingSuccess(news));
+      })
       .catch(() => dispatch(loadingError(true)));
   };
 };
