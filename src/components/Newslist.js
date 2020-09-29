@@ -9,16 +9,16 @@ import {
   getNewsPending,
   getCategory,
 } from "../reducers/index";
-import formatEndpoint from "../utilities/formatEndpoint";
+import getFormattedEndpoint from "../utilities/getFormattedEndpoint";
 
 class NewsList extends React.Component {
   componentDidMount() {
     const { fetchNews, category } = this.props;
 
     if (category === undefined) {
-      fetchNews(formatEndpoint("latest"));
+      fetchNews(getFormattedEndpoint("latest"));
     } else {
-      fetchNews(formatEndpoint("category", category));
+      fetchNews(getFormattedEndpoint("category", category));
     }
   }
 
@@ -26,9 +26,9 @@ class NewsList extends React.Component {
     const { fetchNews, category } = this.props;
 
     if (category === undefined) {
-      fetchNews(formatEndpoint("latest"));
+      fetchNews(getFormattedEndpoint("latest"));
     } else {
-      fetchNews(formatEndpoint("category", category));
+      fetchNews(getFormattedEndpoint("category", category));
     }
   }
 
