@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setCategory } from "../actions/index";
-import { getCategory } from "../reducers/index";
 import { getCategoriesName } from "../utilities/categoriesUtilities";
-import NewsList from "../components/Newslist";
+import { NewsList } from "../components/Newslist";
+import { fetchNewsByCategory } from "../utilities/fetchNewsByCategory";
 
-function News({ setCategory, category }) {
+export const News = () => {
   const { id } = useParams();
-  setCategory(id);
+  const { news, loading, error, category, searchKeyword } = useSelector(
+    (state) => state
+  );
+  const dispatch = useDispatch();
+
+  if (getCategoriesName(category) !== id) {
+    dispatch(setCategory(id));
+  }
+
+  useEffect(() => {
+    dispatch(fetchNewsByCategory(category));
+  }, [category, dispatch, id]);
 
   return (
-    <div className="w-full flex-col flex items-center justify-center">
+    <div className="w-full flex-col flex items-center justify-center bg-gray-200">
       <div className="w-5/6">
         <div className="mt-16 mb-8 flex justify-center">
           {category && (
@@ -22,21 +32,7 @@ function News({ setCategory, category }) {
           )}
         </div>
       </div>
-      <NewsList />
+      <NewsList news={news} error={error} loading={loading} />
     </div>
   );
-}
-
-const mapStateToProps = (state) => ({
-  category: getCategory(state),
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      setCategory,
-    },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(News);
+};

@@ -1,40 +1,56 @@
+import {
+  FETCH_NEWS_BEGIN,
+  FETCH_NEWS_FAILURE,
+  FETCH_NEWS_SUCCESS,
+  SET_CATEGORY,
+  SET_SEARCH_KEYWORD,
+} from "../actions";
 import { getCategoriesIdNumber } from "../utilities/categoriesUtilities";
 
 const initialState = {
   news: [],
   category: undefined,
-  loadingError: undefined,
-  pending: undefined,
+  error: false,
+  loading: false,
+  searchKeyword: undefined,
 };
 
-const news = (state = initialState, action) => {
+const newsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOADING_ERROR":
+    case FETCH_NEWS_BEGIN:
       return {
         ...state,
-        pending: true,
+        loading: true,
+        error: false,
       };
-    case "LOADING_IN_PROGRESS":
+    case FETCH_NEWS_SUCCESS:
       return {
         ...state,
-        isLoading: true,
+        loading: false,
+        news: action.payload.news,
       };
-    case "LOADING_SUCCESS":
+    case FETCH_NEWS_FAILURE:
       return {
         ...state,
-        news: action.news,
+        news: [],
+        error: action.payload.error,
       };
-    case "SET_CATEGORY":
+    case SET_CATEGORY:
       return {
         ...state,
-        category: getCategoriesIdNumber(action.category),
+        category: getCategoriesIdNumber(action.payload.category),
+      };
+    case SET_SEARCH_KEYWORD:
+      return {
+        ...state,
+        searchKeyword: action.payload.keyword,
       };
     default:
       return state;
   }
 };
 
-export default news;
+export default newsReducer;
 
 export const getNews = (state) => state.news;
 export const getNewsPending = (state) => state.pending;

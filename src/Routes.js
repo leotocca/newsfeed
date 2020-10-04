@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import News from "./views/News";
+import { News } from "./views/News";
 
 const Routes = () => (
   <Switch>

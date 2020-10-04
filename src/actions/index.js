@@ -1,24 +1,29 @@
-const LOADING_ERROR = "LOADING_ERROR";
-const LOADING_IN_PROGRESS = "LOADING_IN_PROGRESS";
-const LOADING_SUCCESS = "LOADING_SUCCESS";
-const SET_CATEGORY = "SET_CATEGORY";
+export const SET_CATEGORY = "SET_CATEGORY";
+export const FETCH_NEWS_BEGIN = "FETCH_NEWS_BEGIN";
+export const FETCH_NEWS_SUCCESS = "FETCH_NEWS_SUCCESS";
+export const FETCH_NEWS_FAILURE = "FETCH_NEWS_FAILURE";
+export const SET_SEARCH_KEYWORD = "SET_SEARCH_KEYWORD";
 
 export const setCategory = (category) => ({
   type: SET_CATEGORY,
-  category,
+  payload: { category },
 });
 
-export const loadingError = (bool) => ({
-  type: LOADING_ERROR,
-  hasErrored: bool,
+export const setSearchKeyword = (keyword) => ({
+  type: SET_SEARCH_KEYWORD,
+  payload: { keyword },
 });
 
-export const loadingInProgress = (bool) => ({
-  type: LOADING_IN_PROGRESS,
-  isLoading: bool,
+export const fetchNewsBegin = () => ({
+  type: FETCH_NEWS_BEGIN,
 });
 
-export const loadingSuccess = (news) => ({
-  type: LOADING_SUCCESS,
-  news,
+export const fetchNewsSuccess = (news) => ({
+  type: FETCH_NEWS_SUCCESS,
+  payload: { news },
+});
+
+export const fetchNewsFailure = (error) => ({
+  type: FETCH_NEWS_FAILURE,
+  payload: { error },
 });
