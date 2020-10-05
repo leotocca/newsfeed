@@ -1,25 +1,13 @@
-import { formatNews } from "../utilities/formatNews";
-import {
-  fetchNewsBegin,
-  fetchNewsFailure,
-  fetchNewsSuccess,
-} from "../actions/index";
+import { callApi } from "./callApi";
+import * as dayjs from "dayjs";
 
-export const fetchNews = (endpoint) => {
-  return (dispatch) => {
-    dispatch(fetchNewsBegin());
-
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then((news) => news.slice(0, 10))
-      .then((news) => {
-        return news.map((news) => formatNews(news));
-      })
-      .then((news) => {
-        dispatch(fetchNewsSuccess(news));
-      })
-      .catch(() => dispatch(fetchNewsFailure(true)));
-  };
+export const fetchNews = (dispatch, category, searchKeyword) => {
+  if (category && !searchKeyword) {
+    dispatch(callApi(`https://api.canillitapp.com/news/category/${category}`));
+  } else if (searchKeyword) {
+    dispatch(callApi(`https://api.canillitapp.com/search/${searchKeyword}`));
+  } else {
+    const date = dayjs(new Date()).format("YYYY[-]MM[-]DD");
+    dispatch(callApi(`https://api.canillitapp.com/latest/${date}`));
+  }
 };
-
-export default fetchNews;

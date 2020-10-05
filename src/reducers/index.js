@@ -39,10 +39,16 @@ const newsReducer = (state = initialState, action) => {
       return {
         ...state,
         category: getCategoriesIdNumber(action.payload.category),
+        loading: true,
+        news: [],
+        searchKeyword: undefined,
       };
     case SET_SEARCH_KEYWORD:
       return {
         ...state,
+        loading: true,
+        news: [],
+        // category: undefined,
         searchKeyword: action.payload.keyword,
       };
     default:
