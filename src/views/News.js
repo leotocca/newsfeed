@@ -22,7 +22,11 @@ export const News = () => {
   }, [category, dispatch, id, searchKeyword]);
 
   return (
-    <div className="w-full flex-col flex items-center justify-center bg-gray-200">
+    <div
+      className={`${
+        loading ? "h-screen" : "h-full"
+      } w-full flex-col flex items-center justify-center bg-gray-200`}
+    >
       <div className="w-5/6">
         <div className="mt-16 mb-8 flex justify-center">
           {category && !searchKeyword && (
