@@ -9,8 +9,6 @@ export const SearchBar = () => {
 
   const pressedEnter = useKeyPress("Enter");
 
-  console.log(pressedEnter);
-
   if (pressedEnter) {
     if (keyword !== "") {
       dispatch(setSearchKeyword(keyword));

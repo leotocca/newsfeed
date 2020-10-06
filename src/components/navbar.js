@@ -1,11 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
 
 const Navbar = () => {
+  const history = useHistory();
+
+  console.log({ history });
+
   return (
     <nav className="w-full flex flex-col justify-center items-center">
-      <div className="w-full flex items-center bg-red-500">
+      <div className="w-full flex items-center bg-red-600">
         <div className="h-full flex flex-col justify-center items-start flex-grow text-gray-800 ml-10 my-2">
           <h1 className="font-2xl font-semibold text-white">
             Peek Into Argentina
@@ -19,26 +23,61 @@ const Navbar = () => {
       </div>
 
       <ul className="w-full hidden md:flex justify-center items-center py-2 bg-gray-300">
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/">Home</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/"
+          >
+            Home
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/Politics">Politics</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/Politics"
+          >
+            Politics
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/International">International</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/International"
+          >
+            International
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/Technology">Technology</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/Technology"
+          >
+            Technology
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/Shows">Shows</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/Shows"
+          >
+            Shows
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/Sports">Sports</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/Sports"
+          >
+            Sports
+          </Link>
         </li>
-        <li className="mx-5 transition-all duration-150">
-          <Link to="/Design">Design</Link>
+        <li className="mx-5">
+          <Link
+            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            to="/Design"
+          >
+            Design
+          </Link>
         </li>
       </ul>
     </nav>
