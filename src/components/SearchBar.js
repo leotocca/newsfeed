@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchKeyword } from "../actions";
+import { useKeyPress } from "../utilities/useKeyPress";
 
 export const SearchBar = () => {
   const [keyword, setKeyword] = useState("");
   const dispatch = useDispatch();
+
+  const pressedEnter = useKeyPress("Enter");
+
+  console.log(pressedEnter);
+
+  if (pressedEnter) {
+    if (keyword !== "") {
+      dispatch(setSearchKeyword(keyword));
+    }
+  }
 
   const dispatchSearch = () => {
     if (keyword !== "") {

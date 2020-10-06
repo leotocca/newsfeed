@@ -22,7 +22,7 @@ const NewsItem = (props) => {
           />
         </div>
         <div className="pt-1 pb-5 px-5 flex flex-col items-start">
-          <p className="bg-gray-300 text-gray-800 px-2 py-1 rounded-full text-sm">
+          <p className="bg-gray-300 text-gray-800 px-2 py-1 rounded-full text-sm mt-2">
             {source}
           </p>
           <h4 className="font-semibold text-gray-800 text-xl mt-2 flex-grow">

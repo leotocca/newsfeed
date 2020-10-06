@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div>
+        <div className="h-full">
           <Navbar />
           <Routes />
         </div>

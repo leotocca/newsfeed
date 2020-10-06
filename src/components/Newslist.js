@@ -1,5 +1,6 @@
 import React from "react";
 import NewsItem from "./NewsItem";
+import Loader from "react-loader-spinner";
 
 export const NewsList = (props) => {
   const { news, error, loading } = props;
@@ -11,7 +12,7 @@ export const NewsList = (props) => {
 
       {loading && (
         <div className="">
-          <p>Loading...</p>
+          <Loader type="Grid" color="#f56565" height={50} width={50} />
         </div>
       )}
 

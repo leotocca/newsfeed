@@ -29,7 +29,7 @@ export const News = () => {
     >
       <div className="w-5/6">
         <div className="mt-16 mb-8 flex justify-center">
-          {category && !searchKeyword && (
+          {category && !loading && !searchKeyword && (
             <h2 className="text-3xl text-gray-700 border-b-2 border-gray-700 w-1/3 text-center pb-2">
               {getCategoriesName(category)}
             </h2>
