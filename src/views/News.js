@@ -39,7 +39,7 @@ export const News = () => {
 
       {searchKeyword && !loading && (
         <div className="w-11/12 h-full">
-          <div className="mt-8 mb-4">
+          <div className="mt-16 mb-0 md:mt-8 md:mb-4">
             <h2 className="text-2xl lg:text-4xl text-gray-700 text-center lg:text-left font-semibold">
               Results for: {searchKeyword}
             </h2>
