@@ -27,6 +27,16 @@ export const News = () => {
         loading ? "h-screen" : "h-full"
       } w-full flex-col flex items-center justify-center bg-gray-200`}
     >
+      {category && !searchKeyword && (
+        <div className="w-11/12 h-full">
+          <div className="mt-8 mb-4">
+            <h2 className=" text-lg lg:text-4xl text-gray-700 text-center lg:text-left font-semibold">
+              {getCategoriesName(category)}
+            </h2>
+          </div>
+        </div>
+      )}
+
       {searchKeyword && !loading && (
         <div className="w-11/12 h-full">
           <div className="mt-8 mb-4">

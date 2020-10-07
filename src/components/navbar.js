@@ -1,12 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
 
 const Navbar = () => {
-  const history = useHistory();
-
-  console.log({ history });
-
   return (
     <nav className="w-full flex flex-col justify-center items-center">
       <div className="w-full flex items-center bg-red-600">
@@ -25,7 +21,7 @@ const Navbar = () => {
       <ul className="w-full hidden md:flex justify-center items-center py-2 bg-gray-300">
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/"
           >
             Home
@@ -33,7 +29,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/Politics"
           >
             Politics
@@ -41,7 +37,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/International"
           >
             International
@@ -49,7 +45,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/Technology"
           >
             Technology
@@ -57,7 +53,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/Shows"
           >
             Shows
@@ -65,7 +61,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/Sports"
           >
             Sports
@@ -73,7 +69,7 @@ const Navbar = () => {
         </li>
         <li className="mx-5">
           <Link
-            className="transition-all duration-150 hover:bg-red-400 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
+            className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
             to="/Design"
           >
             Design
