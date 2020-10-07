@@ -1,6 +1,4 @@
-# Newsfeed app.
-
-Second project of the [Advanced FrontEnd with React career in Acamica](https://www.acamica.com/front-end-avanzado-react).
+# Newsfeed app
 
 It's a React app that shows the latest news published by argentinean media provided by [Canillita App API](https://github.com/Canillitapp/headlines-api).
 
@@ -16,6 +14,8 @@ It's a React app that shows the latest news published by argentinean media provi
 - [React Router](https://reactrouter.com/)
 - [React Redux](https://react-redux.js.org/)
 - [React Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [React Loader Spinner](https://www.npmjs.com/package/react-loader-spinner)
 - [Dayjs](https://day.js.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Postcss](https://postcss.org/)
+- [uuid](https://www.npmjs.com/package/uuid)
