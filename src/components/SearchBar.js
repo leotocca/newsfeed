@@ -22,11 +22,11 @@ export const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center mr-10">
+    <div className="flex items-center">
       <div className="relative">
         <input
           type="text"
-          className="w-full h-6 mr-6 right rounded shadow border-gray-400 border text-sm px-3 py-3 focus:outline-none"
+          className="w-full h-8 mr-6 right rounded shadow border-gray-400 border text-sm px-3 py-3 focus:outline-none"
           placeholder="Search a keyword"
           onChange={(e) => setKeyword(e.target.value)}
         />
@@ -46,7 +46,7 @@ export const SearchBar = () => {
       </div>
       <button
         onClick={() => dispatchSearch()}
-        className="font-semibold text-md bg-transparent text-white border border-white px-2 py-0 ml-2 rounded transition-all duration-150 hover:shadow-lg hover:bg-white hover:text-red-500"
+        className="px-4 h-8 rounded transition-all duration-150 font-semibold text-md shadow-lg bg-red-700 text-white hover:bg-transparent hover:text-red-600 hover:border-red-600 md:bg-transparent md:text-white md:border md:border-white md:hover:shadow-lg md:hover:bg-white md:hover:text-red-500 md:px-2 md:py-0 md:ml-2"
       >
         Search
       </button>

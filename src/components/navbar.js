@@ -5,8 +5,8 @@ import { SearchBar } from "./SearchBar";
 const Navbar = () => {
   return (
     <nav className="w-full flex flex-col justify-center items-center">
-      <div className="w-full flex items-center bg-red-600">
-        <div className="h-full flex flex-col justify-center items-start flex-grow text-gray-800 ml-10 my-2">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center bg-red-600">
+        <div className="self-start h-full flex flex-col justify-center items-start flex-grow text-gray-800 md:ml-10 md:my-2 mt-2 mb-4 ml-4">
           <h1 className="font-2xl font-semibold text-white">
             Peek Into Argentina
           </h1>
@@ -15,7 +15,9 @@ const Navbar = () => {
           </p>
         </div>
 
-        <SearchBar />
+        <div className="-mb-4 md:mb-0 md:mr-10">
+          <SearchBar />
+        </div>
       </div>
 
       <ul className="w-full hidden md:flex justify-center items-center py-2 bg-gray-300">

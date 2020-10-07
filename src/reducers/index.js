@@ -48,7 +48,6 @@ const newsReducer = (state = initialState, action) => {
         ...state,
         loading: true,
         news: [],
-        // category: undefined,
         searchKeyword: action.payload.keyword,
       };
     default:
@@ -57,8 +56,3 @@ const newsReducer = (state = initialState, action) => {
 };
 
 export default newsReducer;
-
-export const getNews = (state) => state.news;
-export const getNewsPending = (state) => state.pending;
-export const getNewsError = (state) => state.error;
-export const getCategory = (state) => state.category;
