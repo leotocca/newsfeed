@@ -25,9 +25,9 @@ export const News = () => {
     <div
       className={`${
         loading ? "h-screen" : "h-full"
-      } w-full flex-col flex items-center justify-center bg-gray-200`}
+      } w-full flex justify-center items-center flex-col bg-gray-200 pb-16`}
     >
-      {category && !searchKeyword && (
+      {category && !searchKeyword && !loading && (
         <div className="w-11/12 h-full">
           <div className="mt-16 mb-0 md:mt-8 md:mb-4">
             <h2 className="text-2xl lg:text-4xl text-gray-700 text-center lg:text-left font-semibold">

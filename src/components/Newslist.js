@@ -6,12 +6,12 @@ export const NewsList = (props) => {
   const { news, error, loading } = props;
 
   return (
-    <div className="w-full h-full flex flex-wrap justify-center items-center bg-gray-200">
+    <div className="w-full h-full flex flex-wrap justify-center items-stretch bg-gray-200">
       {news &&
         news.map((newsItem) => <NewsItem news={newsItem} key={newsItem.id} />)}
 
       {loading && (
-        <div className="">
+        <div className="h-full flex items-center justify-center">
           <Loader type="Grid" color="#f56565" height={50} width={50} />
         </div>
       )}

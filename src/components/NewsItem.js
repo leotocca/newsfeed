@@ -9,7 +9,7 @@ const NewsItem = (props) => {
       : title;
 
   return (
-    <div className="w-5/6 sm:w-1/2 md:w-1/3 lg:w-1/4 h-full bg-gray-100 flex flex-col m-10 rounded-lg shadow">
+    <div className="w-5/6 sm:w-1/2 md:w-1/3 lg:w-1/4 h-full bg-gray-100 flex flex-col m-10 rounded-md shadow hover:shadow-xl transition-all duration-200">
       <a href={url} target="_blank" rel="noopener noreferrer">
         <div className="h-32 sm:h-56 md:h-40 xl:h-56 w-full overflow-hidden">
           <img
@@ -29,7 +29,7 @@ const NewsItem = (props) => {
           <h4 className="font-semibold text-gray-800 text-xl mt-2 flex-grow normal-case">
             {titleToShow}
           </h4>
-          <p className="text-gray-800 mt-4 ">Read More...</p>
+          <p className="text-gray-500 mt-4 ">Read More...</p>
         </div>
       </a>
     </div>

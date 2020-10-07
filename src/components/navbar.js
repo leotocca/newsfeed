@@ -4,7 +4,7 @@ import { SearchBar } from "./SearchBar";
 
 const Navbar = () => {
   return (
-    <nav className="w-full flex flex-col justify-center items-center">
+    <nav className="sticky top-0 w-full flex flex-col justify-center items-center ">
       <div className="w-full flex flex-col md:flex-row items-center justify-center bg-red-600">
         <div className="self-start h-full flex flex-col justify-center items-start flex-grow text-gray-800 md:ml-10 md:my-2 mt-2 mb-4 ml-4">
           <h1 className="font-2xl font-semibold text-white">
@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <ul className="w-full hidden md:flex justify-center items-center py-2 bg-gray-300">
+      <ul className="w-full hidden md:flex justify-center items-center py-2 bg-gray-300 border-b border-gray-400">
         <li className="mx-5">
           <Link
             className="transition-all duration-150 hover:bg-red-500 hover:text-white active:bg-red-500 active:text-white px-3 rounded py-1"
