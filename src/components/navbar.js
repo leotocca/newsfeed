@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SearchBar } from "./SearchBar";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className="sticky top-0 w-full flex flex-col justify-center items-center ">
       <div className="w-full flex flex-col md:flex-row items-center justify-center bg-red-600">
@@ -81,5 +81,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;
