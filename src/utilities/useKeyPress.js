@@ -27,6 +27,7 @@ export const useKeyPress = (targetKey) => {
       window.removeEventListener("keydown", downHandler);
       window.removeEventListener("keyup", upHandler);
     };
+  // eslint-disable-next-line
   }, []); // Empty array ensures that effect is only run on mount and unmount
 
   return keyPressed;
